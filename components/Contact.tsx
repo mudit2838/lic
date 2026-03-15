@@ -207,7 +207,14 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="+91 XXXXX XXXXX"
                     required
+                     pattern="[0-9]{10}"
+                    maxLength={10}
+                    minLength={10}
+                    
                     className="w-full bg-navy-800/60 border border-navy-700 text-white px-4 py-3 rounded-xl text-sm"
+                    onInput={(e) => {
+                      e.currentTarget.value = e.currentTarget.value.replace(/\D/g, "");
+                    }}
                   />
 
                 </div>
